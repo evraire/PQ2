@@ -1,0 +1,448 @@
+---
+layout: page
+title: Web Page Content
+---
+                        <h1>{{ page.title }}</h1>
+
+                        <section>
+                            <h2>HTML</h2>
+
+                            <p>
+                                <em><strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage (<strong>HTML</strong>)</em> is the standard language used for creating Web pages. An <em>HTML file</em> is a <em>plain text file</em> identified with an <em>.html</em> extension (e.g. <em>programmers_quest.html</em>) that marks up text with <em>tags</em> to add structure, formatting and links to it. The tags tell the browser how to display the content of the page.
+                            </p>
+
+                            <p>
+                                Any text editor can be used to create a Web page, but a <em>Web browser</em> such as <a href="https://www.firefox.com" target="_blank">Firefox</a> or <a href="https://www.google.com/chrome/" target="_blank">Chrome</a> is needed to properly view them formatted. To create a new Web page, start from the folder where you want to save it and right-click then select...
+                            </p>
+
+                            <ul>
+                                <li><strong>Linux</strong>: <em>Create New &#8594; Text File...</em>
+                                <li><strong>Windows</strong>: <em>New &#8594; Text Document</em>
+                            </ul>
+
+                            <p>
+                                Give it a file name that ends with the <em>.html</em> extension, then open it in your favourite text editor. To see the effects of changes made to the code in your HTML file be sure to save them in your text editor then <em>Reload</em> your page in the browser by clicking the <em>&#10227; icon</em>, or using the <kbd>F5</kbd> or <kbd>Ctrl</kbd>+<kbd>R</kbd> shortcuts.
+                            </p>
+
+                            <p>
+                                If your Web page isn't displaying the way you were expecting then it could indicate that there's an error in your code somewhere. Web browsers come with <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools" target="_blank"><em>Developer Tools</em></a>, the most useful of which to find HTML errors being the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools#the_inspector_dom_explorer_and_css_editor" target="_blank"><em>DOM Inspector</em></a>. You can open them from your browser's menu under: <em>More tools &#8594; Web Developer Tools</em>, or by using the <kbd>F12</kbd> or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> shortcuts.
+                            </p>
+
+                            <p>
+                                Note that you can view the HTML of any Web page by right-clicking on it and selecting <em>View Page Source</em> or using the <kbd>Ctrl</kbd>+<kbd>U</kbd> shortcut.
+                            </p>
+
+                            <section>
+                                <h3>Elements</h3>
+
+                                <p>
+                                    An <em>element</em> in HTML typically consists of a <em>start tag</em>, the content it affects and an <em>end tag</em>. Note that a few elements are <em>empty elements</em> so have no content and only use the start tag. A basic <em>start tag</em> consists of a <em>less than</em> character (e.g. <code>&lt;</code>), the element's <em>name</em> and a <em>greater than</em> character (e.g. <code>&gt;</code>). The corresponding <em>end tag</em> consists of a <em>less than</em> character, a <em>slash</em> (e.g. <code><em>/</em></code>), the <em>same name</em> and a <em>greater than</em> character. While element name are case-insensitive, meaning they can use upper or lowercase characters, the modern Web typically uses all lowercase ones. For example, the <a href="#paragraphs"><code>p</code></a> element is used to surround a <em>paragraph</em> of text:
+                                </p>
+
+                                {% highlight html %}<p>This is a paragraph.</p>{% endhighlight %}
+
+                                <p>
+                                    Elements can be <em>nested</em>, meaning they can contain other elements. Note that, when elements are properly nested, the inner element must end before the outer one. For example, the <a href="#strong"><code>b</code></a> element tells the browser to render its content using a <b>bold font</b>. Note how it is nested within the paragraph element so its end tag appears before the paragraph's one:
+                                </p>
+
+                                {% highlight html %}<p>This paragraph has some <b>bold text</b> in it.</p>{% endhighlight %}
+                            </section>
+
+                            <section>
+                                <h3>Attributes</h3>
+
+                                <p>
+                                    Start tags can have one or more <em>attributes</em> in them that are used to provide additional details. They appear between the element's <em>name</em> and the <em>greater than</em> character that closes the tag, and are separated by a space. They take the form of a <em>name/value pair</em> that consists of the attribute's <em>name</em>, an <em>equal sign</em> (e.g. <code>=</code>) followed by the attribute's <em>value</em> usually enclosed in <em>double-quotes</em> (e.g. <code>"</code>). For example, links are created using the <a href="#links"><code>a</code></a> element and its <code>href</code> attribute specifies the address that the link points to:
+                                </p>
+
+                                {% highlight html %}<p>Link to the <a href="https://evraire.github.io/PQ2/">Programmer's Quest</a> site.</p>{% endhighlight %}
+                            </section>
+
+                            <section>
+                                <h3>Comments</h3>
+
+                                <p>
+                                    Like every other programming language, HTML supports comments that are used to make the code more understandable, but aren't shown in the Web page. Comments begin with a less than character, an exclamation mark and two dash characters (e.g. <code>&lt;!--</code>), then continue until two dashes and a greater than character are encountered (e.g. <code>--&gt;</code>). Everything in between gets ignored by the browser, including any elements.
+                                </p>
+
+                                {% highlight html %}<!-- This is a comment in HTML -->{% endhighlight %}
+                                {% highlight html %}<!--p> Another comment where these elements <b>are ignored</b> and hidden </p-->{% endhighlight %}
+                            </section>
+                        </section>
+
+                        <hr style="color: #e8e8e8">
+
+                        <section id="semantics">
+                            <h2>A Question of <em>Semantics</em></h2>
+
+                            <p>
+                                When authoring content for the Web it is important to be inclusive so that everyone can enjoy your work. For Web pages this means keeping in mind that the visually impaired may not be able to see the formatting on your page: many of your users will experience your content using a <a href="https://en.wikipedia.org/wiki/Screen_reader" target="_blank"><em>screen reader</em></a> instead of a Web browser.
+                            </p>
+
+                            <p>
+                                Historically, formatting-only elements used to cause issues with screen readers as they didn't know how to interpret them, and certainly couldn't display the format. This sometimes caused the meaning of a sentence to change and resulted in user confusion.
+                            </p>
+
+                            <p>Consider the following example:</p>
+
+                            <!-- TODO: this formatting should be done using CSS styling of the blockquote element instead of abusing the pre element here -->
+<pre>
+He's a special boy.
+<br>
+He's a <em>special</em> boy.
+</pre>
+
+                            <p>
+                                When reading the first sentence it sounds like the boy is genuinely special. However, by putting emphasis on the word <em>special</em>, the second one reads differently, which makes it sound sarcastic and completely changes the meaning of the sentence.
+                            </p>
+
+                            <p>
+                                Here's another example where the formatting doesn't necessarily change the meaning of the sentence, but can change how it is read:
+                            </p>
+
+<pre>
+Whatever you do, <strong>do not</strong> be late!
+</pre>
+
+                            <p>
+                                The formatting strongly emphasizes important words and we tend to stress these when reading the sentence out loud.
+                            </p>
+
+                            <p>
+                                To better support screen readers and the visually impaired <em>semantic elements</em> were introduced to HTML that convey the <em>meaning</em> of the formatting and allow screen readers to read out sentences as they were intended. For backwards compatibility the formatting-only tags can still be used, although for formatting text without conveying any meaning it is generally preferred to use a <a href="#span"><code>span</code></a> element with CSS styling.
+                            </p>
+
+                            <p>
+                                In general, if a sentence reads differently when formatted then you should use a semantic element. When unsure it is generally preferable to favour a semantic element over the formatting-only one.
+                            </p>
+                        </section>
+
+                        <hr style="color: #e8e8e8">
+
+                        <section>
+                            <h2>Document</h2>
+
+                            <p>
+                                An HTML <em>document</em> follows a prescribed structure that identifies a file as HTML and divides it into two major sections: the <code>head</code> element for meta information about the content such as its <em>title</em> and the <em>language</em> it is written in, and the <code>body</code> element that has the actual content of the page to display.
+                            </p>
+
+                            <p>
+                                New HTML documents start from this template:
+                            </p>
+
+{% highlight html %}
+<!DOCTYPE html>
+<html lang="en-CA">
+    <head>
+        <meta charset="utf-8">
+        <title>[Page Title]</title>
+    </head>
+
+    <body>
+        <em>[Page Content]</em>
+    </body>
+</html>
+{% endhighlight %}
+
+                            <p>
+                                All HTML files must begin with a <em>document type declaration</em> followed by the <code>html</code> element, which tell Web browsers to interpret the content of the file as formatted text when displaying it to the user. The document type declaration is a special empty element that doesn't have an end tag. It can be seen in the template above and looks like this:
+                            </p>
+
+                            {% highlight html %}<!DOCTYPE html>{% endhighlight %}
+
+                            <p>
+                                As mentioned, it is immediately followed by the <code>html</code> element that wraps the entirety of the content, so its closing tag ends up as the last thing in the file. While not strictly necessary, it is recommended to add the <code>lang</code> attribute to it to specify the <em>language</em> the page <em>content</em> (not the code!) is <em>written in</em>. The value of the <code>lang</code> attribute follows a specific pattern: it must begin with a <em>two letter lowercase language code</em> for the <em>language</em>, optionally followed by a dash (e.g <code>-</code>) and a <em>two letter uppercase country code</em> for the <em>country</em>. For example:
+                            </p>
+
+                            <ul>
+                                <li> <code>&lt;html lang="fr"&gt;</code> indicates that the Web page is in the <em>French</em> language;
+                                <li> <code>&lt;html lang="en"&gt;</code> indicates <em>English</em> content;
+                                <li> <code>&lt;html lang="en-CA"&gt;</code> indicates that the language used is <em>English Canadian</em>.
+                            </ul>
+
+                            <p>
+                                As seen in the template above, the <code>html</code> element always contains a <a href="#head"><code>head</code></a> element followed by a <a href="#body"><code>body</code></a> element.
+                            </p>
+
+                            <section id="head">
+                                <h3><em>head</em></h3>
+
+                                <p>
+                                    In the template above the <code>head</code> element also contains two elements.
+                                </p>
+
+                                <p>
+                                    The first one is the <code>meta</code> element. While there's only one listed here, <code>head</code> elements can often be found with many of them each with their own purpose. While these elements are optional, the one seen here is recommended for specifying the <em>character set</em> of the file using the <code>charset</code> attribute and should come first in the <code>head</code>. The character set is set by your text editor when saving your code, and nearly every modern text editor uses the <em>utf-8</em> one by default.
+                                </p>
+
+                                <p>
+                                    The second element under the <code>head</code> in the template is the <code>title</code> element, which is typically set to the title of your Web page but can be whatever you want. The content of the <code>title</code> element is the text shown in your browser's tab and is used for the default name of bookmarks to your page.
+                                </p>
+
+                                <p>
+                                    The <code>head</code> element can contain other important elements not shown in this template. The <code>style</code> element is used to add an internal <em>Cascading Style Sheet (CSS)</em> directly within the HTML file, while the <code>link</code> elements are used to reference external style sheets with a <em>.css</em> extension. Similarly the <code>script</code> elements are used both for internal <em>JavaScript</em> scripts as well as external ones with a <em>.js</em> extension.
+                                </p>
+
+                                <p>
+                                    Note: <em>Cascading Style Sheets (CSS)</em> and <em>JavaScript</em> are outside the scope of this document.
+                                </p>
+                            </section>
+
+                            <section id="body">
+                                <h3><em>body</em></h3>
+
+                                <p>
+                                    The <code>body</code> element contains all the text and markup that gets displayed to the user in the Web browser. Note that, in HTML documents, white space is <em>insignificant</em>: no matter how many spaces are inserted or how much your content is indented it gets collapsed down to a single space for display. This has the benefit of allowing you to space out your code to make it easier to read without affecting how the user will see the page.
+                                </p>
+
+                                <p>
+                                    The top level of the <code>body</code>'s content typically contains elements used to structure the page's content into <a href="#headings">headings</a>, <a href="#paragraphs">paragraphs</a>, <a href="#lists">lists</a>, tables and forms.
+                                </p>
+                            </section>
+                        </section>
+
+                        <hr style="color: #e8e8e8">
+
+                        <section>
+                            <h2>Structural Elements</h2>
+
+                            <section id="headings">
+                                <h3>Headings</h3>
+
+                                <p>
+                                    Most real world texts are structured into <em>headings</em> and <em>paragraphs</em>, which makes reading them more enjoyable. Text can have multiple levels of headings: consider a book whose main heading could be its title, with each chapter having its own heading and can sometimes have sub-chapters with their own heading too.
+                                </p>
+
+                                <p>
+                                    HTML has six heading elements: <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code>. Each element is used for a different level with <code>h1</code> being for the main heading, <code>h2</code> for a subheading, <code>h3</code> for a sub-subheading, and so on. It is preferable not to skip a level as web browsers generally expect to encounter an <code>h1</code> heading before an <code>h2</code> one, and an <code>h2</code> heading before an <code>h3</code> one.
+                                </p>
+
+                                <p>
+                                    Note how this conveys semantic meaning between the heading levels: higher numbered headings usually fall under lower numbered ones, and headings with the same number usually have the same importance. Users often skim a page by its headings, and search engines will use them when indexing your Web page.
+                                </p>
+
+                                <p>
+                                    The look of each heading level can be highly customized using CSS styling, but by default lower numbered headings with higher importance get displayed in a larger font. Each subsequent level of heading gets displayed using smaller and smaller ones:
+                                </p>
+
+<pre>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+</pre>
+                                <p>
+                                    Note: unfortunately the current CSS style sheet on this page causes the first two levels to display <em>the other way around</em>, but you get the idea. &#128553;
+                                </p>
+                            </section>
+
+                            <section id="paragraphs">
+                                <h3>Paragraphs and Line Breaks</h3>
+
+                                <p>
+                                    <em>Paragraphs</em> always <em>start on a new line</em> and are usually a <em>block of text</em>. Every block of text on this page is an example of a paragraph. If for whatever reason you need to introduce a <em>line break</em> in a specific location you can use the empty <code>br</code> element for that. Remember: empty elements don't have an end tag! For example:
+                                </p>
+
+{% highlight html %}
+<p>
+    Mozilla<br>
+    331 E. Evelyn Avenue<br>
+    Mountain View, CA<br>
+    94041<br>
+    USA<br>
+</p>
+{% endhighlight %}
+
+                                <p>This is displayed in the browser like this:</p>
+
+                                <p>
+                                    Mozilla<br>
+                                    331 E. Evelyn Avenue<br>
+                                    Mountain View, CA<br>
+                                    94041<br>
+                                    USA<br>
+                                </p>
+                            </section>
+
+                            <section id="lists">
+                                <h3>Lists</h3>
+
+                                <p>
+                                    An <em>unordered list</em> list, often called a <em>bullet list</em>, is defined using the <code>ul</code> element, with each <em>list item</em> starting with an empty <code>li</code> element. For example:
+                                </p>
+
+{% highlight html %}
+<ul>
+    <li>An item
+    <li>Another item
+    <li>Some other item
+</ul>
+{% endhighlight %}
+
+                                <p>This is displayed in the browser like this:</p>
+
+                                <ul>
+                                    <li>An item
+                                    <li>Another item
+                                    <li>Some other item
+                                </ul>
+
+                                <p>
+                                    Similarly an <em>ordered list</em> is defined using the <code>ol</code> element and uses the same <code>li</code> empty element for each item:
+                                </p>
+
+{% highlight html %}
+<ol>
+    <li>First item
+    <li>Second item
+    <li>Third item
+</ol>
+{% endhighlight %}
+
+                                <p>This is displayed in the browser like this:</p>
+
+                                <ol>
+                                    <li>First item
+                                    <li>Second item
+                                    <li>Third item
+                                </ol>
+
+                                <p>
+                                    Lists can be nested resulting in the inner list getting indented. Unordered and ordered lists can be used together:
+                                </p>
+
+{% highlight html %}
+<ul>
+    <li>An item
+    <li>Another item
+    <ol>
+        <li>First item
+        <li>Second item
+        <li>Third item
+    </ol>
+    <li>Some other item
+</ul>
+{% endhighlight %}
+
+                                <p>This is displayed in the browser like this:</p>
+
+                                <ul>
+                                    <li>An item
+                                    <li>Another item
+                                    <ol>
+                                        <li>First item
+                                        <li>Second item
+                                        <li>Third item
+                                    </ol>
+                                    <li>Some other item
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3>section and div</h3>
+
+                                <p>
+                                    It can be desirable to group elements together to organize them, such as grouping a chapter heading with all of its paragraphs. HTML has the <code>section</code> and <code>div</code> elements for this, with the former being the semantic element and the latter having no meaning. By default this doesn't change the look of its content, but CSS styling can be applied to the group to affect all of the elements within. It can also be useful when using JavaScript to affect everything within a group together.
+                                </p>
+                            </section>
+                        </section>
+
+                        <hr style="color: #e8e8e8">
+
+                        <section>
+                            <h2>Formatting Elements</h2>
+
+                            <section>
+                                <h3><em>em</em> and <em>i</em></h3>
+
+                                <p>
+                                    To add <em>emphasis</em> to text by displaying it <em>in italics</em> there are the <code>em</code> and <code>i</code> elements, with the former being the semantic version of the latter. Using the previous sentence as an example:
+                                </p>
+
+                                {% highlight html %}add <em>emphasis</em> to text by displaying it <em>in italics</em>{% endhighlight %}
+
+                                <p>
+                                    For the reasons <a href="#semantics">mentioned above</a> it is preferable to use the semantic version. However, if you just want to render text <em>in italics</em> without intending the sentence to read differently, it is preferable to use the <a href="#span"><code>span</code></a> element.
+                                </p>
+                            </section>
+
+                            <section id="strong">
+                                <h3><em>strong</em> and <em>b</em></h3>
+
+                                <p>
+                                    To emphasize the <em>importance</em> of text by displaying it <strong>in bold</strong> HTML has the <code>strong</code> and <code>b</code> elements, with the former being the semantic version of the latter.
+                                </p>
+
+                                {% highlight html %}This liquid is <strong>highly toxic</strong>!{% endhighlight %}
+
+                                <p>This is displayed in the browser like this:</p>
+
+                                <p>This liquid is <strong>highly toxic</strong>!</p>
+
+                                <p>
+                                    For the reasons <a href="#semantics">mentioned above</a> it is preferable to use the semantic version. However, if you just want to render text <em>in bold</em> without intending the sentence to read differently, it is preferable to use the <a href="#span"><code>span</code></a> element.
+                                </p>
+                            </section>
+
+                            <section id="span">
+                                <h3><em>span</em></h3>
+
+                                <p>
+                                    If you need to format text without putting any emphasis on it and changing the way the sentence reads it is preferable to use the <code>span</code> element along with its <code>style</code> or <code>class</code> attributes and CSS styling. For example:
+                                </p>
+
+                                {% highlight html %}An example of meaningless <span style="font-style: italic">italic text</span> and <span style="font-weight: bold">bold text</bold>.{% endhighlight %}
+
+                                <p>This is displayed in the browser like this:</p>
+
+                                <p>An example of meaningless <span style="font-style: italic">italic text</span> and <span style="font-weight: bold">bold text</span>.</p>
+
+                                <p>Note: <em>Cascading Style Sheets (CSS)</em> are outside the scope of this document.</p>
+                            </section>
+                        </section>
+
+                        <hr style="color: #e8e8e8">
+
+                        <section>
+                            <h2>Content Elements</h2>
+
+                            <section>
+                                <h3>Horizontal Rules</h3>
+
+                                <p>
+                                    A <em>horizontal rule</em> is a line across the page that is used to thematically break up its content. An example of it can be seen just above the <em>Content Elements</em> heading above. The <em>horizontal rule</em> uses an empty <code>hr</code> element:
+                                </p>
+
+                                {% highlight html %}<hr>{% endhighlight %}
+                            </section>
+
+                            <section id="links">
+                                <h3>Links</h3>
+
+                                <p>
+                                    <em>Links</em> to other pages or resources on the Web are created using the <a href="#links"><code>a</code></a> element (called an <em>anchor</em>). It has an <code>href</code> attribute (<em>for hyperlink reference</em>) that specifies the Web address that the link points to. These <em>hyperlinks</em> are the <em>Hyper</em> that give <em>Hyper Text Markup Language</em> its name.
+                                </p>
+
+                                {% highlight html %}Link to the <a href="https://evraire.github.io/PQ2/">Programmer's Quest</a> site.{% endhighlight %}
+
+                                <p>
+                                    This is displayed in the browser like this: Link to the <a href="https://evraire.github.io/PQ2/" target="_blank">Programmer's Quest</a> site.
+                                </p>
+                            </section>
+
+                            <section>
+                                <h3>Images</h3>
+
+                                <p>
+                                    <em>Images</em> get added to a Web page using the empty <code>img</code> element. It needs to have a <code>src</code> attribute set to the address of the image to display. It also needs an <code>alt</code> attribute, which has the double role of getting read by screen readers and getting shown to users when the link to the image is broken. It has a <code>width</code> and <code>height</code> attributes for specifying the <em>width</em> and <em>height</em> of the image <em>in pixels</em> respectively. These two are optional, but should ideally be provided:
+                                </p>
+
+                                {% highlight html %}<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" alt="A cute Golden Retriever puppy" width="200" height="241">{% endhighlight %}
+
+                                <p>This is displayed in the browser like this:</p>
+
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" alt="A cute Golden Retriever puppy" width="200" height="241">
+                            </section>
+                        </section>
